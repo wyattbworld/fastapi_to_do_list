@@ -9,10 +9,13 @@ Activate the virtual environment
 
 Download required modules.
 > python -m pip install pydantic
-> ptyhon -m pip install fastapi
+> python -m pip install fastapi
+> python -m pip install uvicorn
 
 Setup the git
 > git init
-> git add .
+> git add . --force
 > git commit -m "first commit"
->
+> git branch -M main
+> git remote add origin https://github.com/wyattbworld/fastapi_to_do_list.git
+> git push -u origin main
