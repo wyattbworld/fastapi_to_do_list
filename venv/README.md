@@ -8,9 +8,10 @@ TIP: Once you run the app, check out the documentation at:
 http://localhost:8000/docs#/
 
 Development plan:
-Version 1: A basic api that does not connect to anything.
-Version 2: Implement OpenAPI integration.
-Version 3: Add unit testing
-Version 4: Integrate with Cloud Firebase
-Version 5: AWS Deployment with https
+Version 1: A basic api that does not connect to anything. [x]
+Version 2: Implement OpenAPI integration. [x]
+Version 3: Add unit testing [x]
+Version 4: Google Run Deployment
+Version 5: Integrate with Cloud Firebase
 Version 6: Add users and authentication
+Version 7: Flutter app that uses the api

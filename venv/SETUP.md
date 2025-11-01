@@ -11,6 +11,8 @@ Download required modules.
 > python -m pip install pydantic
 > python -m pip install fastapi
 > python -m pip install uvicorn
+> python -m pip install httpx
+> python -m pip install pytest
 
 Setup the git
 > git init

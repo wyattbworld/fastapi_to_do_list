@@ -12,7 +12,7 @@ def home():
     return {"Hello": "FastAPI"} #Json response
 
 @app.get("/todos", description="Show all of the to do items we have", response_description="A list of to do items", response_model=list[TodoItem])
-def get_todos(limit: Annotated[int, Query(description="The number of responses you want", ge=1)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
+def get_todos(limit: Annotated[int, Query(description="The number of responses you want", ge=0)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
     fun_offset = offset
     fun_limit = limit
     if fun_offset >= len(todos):
@@ -22,7 +22,7 @@ def get_todos(limit: Annotated[int, Query(description="The number of responses y
     return todos[fun_offset:fun_offset+fun_limit]
 
 @app.get("/todos/complete", description="Show all of the completed to do items we have", response_description="A list of to do items", response_model=list[TodoItem])
-def todos_complete(limit: Annotated[int, Query(description="The number of responses you want", ge=1)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
+def todos_complete(limit: Annotated[int, Query(description="The number of responses you want", ge=0)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
     completed_todos = []
     for todo in todos:
         if todo.completed:
@@ -36,7 +36,7 @@ def todos_complete(limit: Annotated[int, Query(description="The number of respon
     return completed_todos[fun_offset:fun_offset+fun_limit]
 
 @app.get("/todos/incomplete", description="Show all of the noncompleted to do items we have", response_description="A list of to do items", response_model=list[TodoItem])
-def todos_incomplete(limit: Annotated[int, Query(description="The number of responses you want", ge=1)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
+def todos_incomplete(limit: Annotated[int, Query(description="The number of responses you want", ge=0)] = 20, offset: Annotated[int, Query(description="The index of the item you want to start with", ge=0)] = 0): #This is where we specify query paramaters.
     noncompleted_todos = []
     for todo in todos:
         if not todo.completed:
