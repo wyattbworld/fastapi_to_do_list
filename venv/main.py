@@ -2,6 +2,7 @@ from fastapi import FastAPI, Query, Path
 from typing import Annotated
 from fastapi.responses import JSONResponse
 from models import TodoItem
+import uvicorn
 
 app = FastAPI(title="Wyatt's FastAPI Demo", description="Your number one to-do app!")
 
@@ -83,3 +84,5 @@ def uncomplete_todo(index: Annotated[int, Path(description="The index of the tod
     todos[index].completed = False
     return todos[index]
 
+if __name__ == '__main__':
+    uvicorn.run(app, port=8000, host='0.0.0.0')
