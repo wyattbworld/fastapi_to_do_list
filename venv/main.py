@@ -83,6 +83,3 @@ def uncomplete_todo(index: Annotated[int, Path(description="The index of the tod
         return JSONResponse(status_code=404, content="Index not found")
     todos[index].completed = False
     return todos[index]
-
-if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
