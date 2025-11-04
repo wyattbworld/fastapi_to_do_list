@@ -1,4 +1,5 @@
 
+Here's what I used to setup the environment.
 PLATFORM: Windows 11 using git bash
 Create the virutual environment using Python 3.13.9
 > python -m venv venv
